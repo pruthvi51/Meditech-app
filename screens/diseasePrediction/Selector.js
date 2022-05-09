@@ -14,9 +14,12 @@ function App({ setSymptoms }) {
   const [selectedTeam, setSelectedTeam] = useState({});
   const [selectedTeams, setSelectedTeams] = useState([]);
   return (
+    // <View collapsable={false} style={{}}>
     <View style={{ margin: 30, width: "90%" }}>
       <View style={{ width: "100%", alignItems: "center" }}>
-        <Text style={{ fontSize: 30, paddingBottom: 20 }}>Demos</Text>
+        <Text style={{ fontSize: 30, paddingBottom: 20 }}>
+          Disease Predictor
+        </Text>
       </View>
       {/* <Text style={{ fontSize: 20, paddingBottom: 10 }}>Select Demo</Text>
       <SelectBox
@@ -40,9 +43,12 @@ function App({ setSymptoms }) {
         title="Submit"
         onPress={() => {
           setSymptoms(selectedTeams);
+          setSelectedTeams([]);
+          setSelectedTeam({});
         }}
       />
     </View>
+    // </View>
   );
 
   function onMultiChange() {

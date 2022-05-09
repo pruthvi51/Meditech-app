@@ -62,18 +62,7 @@ const TabNavigator = () => {
         headerShown: false,
       }}
     >
-      <Tab.Screen name="WelcomeScreen" component={WelcomeScreen} />
-      <Tab.Screen
-        name="DiseasePredict"
-        component={DiseasePredictScreen}
-        options={{
-          title: "",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="disease" size={25} color={color} />
-          ),
-          tabBarActiveTintColor: Colors.primary500,
-        }}
-      />
+      {/* <Tab.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
       <Tab.Screen
         name="MedReminder"
         component={MedReminderScreen}
@@ -81,6 +70,17 @@ const TabNavigator = () => {
           title: "",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="alarm-outline" size={25} color={color} />
+          ),
+          tabBarActiveTintColor: Colors.primary500,
+        }}
+      />
+      <Tab.Screen
+        name="DiseasePredict"
+        component={DiseasePredictScreen}
+        options={{
+          title: "",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5 name="disease" size={25} color={color} />
           ),
           tabBarActiveTintColor: Colors.primary500,
         }}

@@ -2,6 +2,7 @@
 import { useRoute } from "@react-navigation/native";
 import React, { Component, useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { Colors } from "../../constants/styles";
 import { getDiseases } from "../../util/https";
 
 // create a component
@@ -23,7 +24,50 @@ const Reuslt = () => {
   }
   return (
     <View style={styles.container}>
-      <Text>{disease}</Text>
+      <View
+        style={{
+          backgroundColor: "red",
+          opacity: 0.7,
+          borderRadius: 10,
+          padding: 20,
+          marginBottom: 100,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 25,
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          Disclaimer
+        </Text>
+        <Text style={{ color: "white" }}>
+          The predictions are made by an Intelligent system, We strongly
+          recomend consulting a Doctor
+        </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: Colors.primary800,
+          width: 250,
+          // padding: 5,
+          height: 100,
+          borderRadius: 10,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 30,
+            color: "white",
+            fontFamily: "satisfy",
+          }}
+        >
+          {disease}
+        </Text>
+      </View>
     </View>
   );
 };

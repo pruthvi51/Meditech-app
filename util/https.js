@@ -6,9 +6,10 @@ export async function getDiseases(symptoms) {
     req += i.item + "=1&";
   }
   req = req.slice(0, -1);
-  console.log(req);
+  // console.log(req);
   const res = await axios.post(
     "https://arogyabhagya.herokuapp.com/predict/?" + req
   );
+  // console.log(res);
   return res.data.prediction;
 }

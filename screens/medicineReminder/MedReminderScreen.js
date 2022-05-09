@@ -8,11 +8,14 @@ import AddReminder from "./AddReminder";
 import IconButton from "../../components/ui/IconButton";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../../constants/styles";
+import { useDispatch } from "react-redux";
+import * as authActions from "../../store/actions/auth";
 
 const Stack = createNativeStackNavigator();
 
 const MedReminderScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   return (
     <View collapsable={false} style={{ flex: 1 }}>
       <Stack.Navigator

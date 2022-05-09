@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 
 import * as reminderActions from "../../store/actions/reminder";
 import IconButton from "../../components/ui/IconButton";
+import { Colors } from "../../constants/styles";
 
 const ReminderDetail = () => {
   const dispatch = useDispatch();
@@ -14,22 +15,32 @@ const ReminderDetail = () => {
   // console.log(item);
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 30 }}>{item.name.toUpperCase()}</Text>
-      <View style={{ height: 20 }}></View>
-      <View style={{ height: 100, width: 180 }}>
-        <Image source={{ uri: item.imageUri }} />
-      </View>
-      <View style={{ height: 10 }}></View>
-      <Text>
-        Repeats
-        {item.name === "Everyday" ? " everyday" : ` every ${item.day}`}
-      </Text>
-      <View style={{ height: 10 }}></View>
-      <Text>
-        At {item.hours}:{item.min}hrs
-      </Text>
-      <View style={{ height: 10 }}></View>
-      <View style={{ width: 100 }}>
+      <View
+        style={{
+          borderWidth: 2,
+          padding: 40,
+          borderColor: Colors.primary800,
+          backgroundColor: Colors.primary100,
+          borderRadius: 10,
+        }}
+      >
+        <Text style={{ fontSize: 30 }}>{item.name.toUpperCase()}</Text>
+        <View style={{ height: 20 }}></View>
+        <Image
+          source={{ uri: item.imageUri }}
+          style={{ height: 150, width: 180 }}
+        />
+
+        <View style={{ height: 10 }}></View>
+        <Text style={{ textAlign: "center" }}>
+          Repeats
+          {item.name === "Everyday" ? " everyday" : ` every ${item.day}`}
+        </Text>
+        <View style={{ height: 10 }}></View>
+        <Text style={{ textAlign: "center" }}>
+          At {item.hours}:{item.min}hrs
+        </Text>
+        <View style={{ height: 10 }}></View>
         <Button
           onPress={() => {
             dispatch(reminderActions.deleteRemainder(item.id, item.name));

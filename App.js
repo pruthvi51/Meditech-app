@@ -42,7 +42,7 @@ const store = createStore(
 
 const fetchFonts = () => {
   return loadAsync({
-    satisfy: require("./assets/fonts/Satisfy-Regular.ttf"),
+    "satisfy": require("./assets/fonts/Satisfy-Regular.ttf"), // prettier-ignore
   });
 };
 
