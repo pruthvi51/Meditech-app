@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "meditek",
-    "slug": "meditek",
+    "name": "meditech",
+    "slug": "meditech",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon1.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.pruthvi51.meditek"
+      "package": "com.pruthvi51.meditech"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -8,8 +8,8 @@ export async function getDiseases(symptoms) {
   req = req.slice(0, -1);
   // console.log(req);
   const res = await axios.post(
-    "https://arogyabhagya.herokuapp.com/predict/?" + req
+    "https://arogyabhagyam.herokuapp.com/predict/?" + req
   );
   // console.log(res);
-  return res.data.prediction;
+  return { prediction: res.data.prediction, description: res.data.description };
 }

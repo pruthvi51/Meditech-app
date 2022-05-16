@@ -4,21 +4,23 @@ import React, { Component, useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "../../constants/styles";
 import { getDiseases } from "../../util/https";
+import LoadingOverlay from "../../components/ui/LoadingOverlay";
 
 // create a component
 const Reuslt = () => {
   const route = useRoute();
   const { val } = route.params;
   const [dLoaded, setDLoaded] = useState(false);
-  const [disease, setDisease] = useState("");
+  const [disease, setDisease] = useState();
   if (!dLoaded) {
     getDiseases(val).then((val) => {
-      setDisease(val);
+      setDisease({ disease: val.prediction, desc: val.description });
+      console.log(disease);
       setDLoaded(true);
     });
     return (
       <View>
-        <Text>Loading...</Text>
+        <LoadingOverlay />
       </View>
     );
   }
@@ -50,9 +52,9 @@ const Reuslt = () => {
       <View
         style={{
           backgroundColor: Colors.primary800,
-          width: 250,
+          width: "90%",
           // padding: 5,
-          height: 100,
+          height: 250,
           borderRadius: 10,
           alignItems: "center",
           justifyContent: "center",
@@ -65,7 +67,17 @@ const Reuslt = () => {
             fontFamily: "satisfy",
           }}
         >
-          {disease}
+          {disease.disease}
+        </Text>
+        <Text
+          style={{
+            textAlign: "center",
+            marginTop: 5,
+            color: "white",
+            opacity: 0.5,
+          }}
+        >
+          {disease.desc}
         </Text>
       </View>
     </View>
